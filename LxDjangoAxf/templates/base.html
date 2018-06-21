@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}X.xx购物{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    {% block custom_css %}
+    {% endblock custom_css %}
+    <script type="text/javascript" charset="utf-8" src="{% static 'js/bootstrap.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'js/md5.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'js/swiper.jquery.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'js/base.js' %}"></script>
+    {% block custom_js %}
+    {% endblock custom_js %}
+</head>
+<body>
+    <header></header>
+    <div>
+        {% block base %}
+        {% endblock base %}
+    </div>
+
+    <footer>
+        <a class="home" href="{% url 'axf:home' %}">
+            <dl>
+                <dt><span><img src="{% static 'img/home.png' %}"/></span></dt>
+                <dd>主页</dd>
+            </dl>
+        </a>
+        <a class="market" href="{% url 'axf:market' 104749 0 0%}">
+            <dl>
+                <dt><span><img src="{% static 'img/market.png' %}"/></span></dt>
+                <dd>闪送超市</dd>
+            </dl>
+        </a>
+        <a class="cart" href="{% url 'axf:cart' %}">
+            <dl>
+                <dt><span><img src="{% static 'img/cart.png' %}"/></span></dt>
+                <dd>购物车</dd>
+            </dl>
+        </a>
+        <a class="mine" href="{% url 'axf:mine' %}">
+            <dl>
+                <dt><span><img src="{% static 'img/mine.png' %}"/></span></dt>
+                <dd>我的</dd>
+            </dl>
+        </a>
+    </footer>
+</body>
+</html>
